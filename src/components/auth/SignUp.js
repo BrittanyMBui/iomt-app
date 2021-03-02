@@ -6,7 +6,7 @@ class SignUp extends React.Component {
         email: '',
         password: '',
         posts: [],
-        content: []
+        articles: []
     }
 
     handleChange = (event) => {
