@@ -30,7 +30,7 @@ class SignUp extends React.Component {
         })
         .then((jsonData) => {
             console.log(jsonData);
-            this.props.history.push('/')
+            this.props.history.push('/home')
         })
         .catch((err) => console.log(err));
     };

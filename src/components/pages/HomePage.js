@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ArticleList from '../articles/ArticleList';
 
 class HomePage extends React.Component {
@@ -23,6 +24,9 @@ class HomePage extends React.Component {
             <div>
                 <h1>Welcome Back, usernamegoeshere</h1>
                 <ArticleList articles={this.state.articles} />
+                <Link to='/post'>
+                    <i className="fas fa-pen-alt"></i>
+                </Link>
             </div>
         );
     }

@@ -1,7 +1,7 @@
 import Share from '../Share';
 
 const ArticleCard = (props) => {
-    console.log('ARTICLECARD PROPS', {props})
+
     return (
         <>
             <div>
@@ -11,11 +11,11 @@ const ArticleCard = (props) => {
                         <br />
                         <img src={props.article.urlToImage} alt={props.article.title}/>
                         <br />
-                        <button>Save</button>
-                        <div>
                         <Share article={props.article}/>
+                        <br />
+                        <div>
+                        <i className="fas fa-save"></i>
                         </div>
-
                     </li>
                 </ul>
             </div>

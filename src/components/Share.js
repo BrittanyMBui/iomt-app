@@ -8,18 +8,18 @@ import {
 } from 'react-share';
 
 const Share = (props) => {
-    console.log('SHARE PROPS:', props)
     const url = props.article.url;
+    const size = "2.5rem";
     return (
         <>
             <EmailShareButton url={url}>
-                <EmailIcon />
+                <EmailIcon size={size}/>
             </EmailShareButton>
             <LinkedinShareButton url={url}>
-                <LinkedinIcon />
+                <LinkedinIcon size={size}/>
             </LinkedinShareButton>
             <TwitterShareButton url={url}>
-                <TwitterIcon />
+                <TwitterIcon size={size}/>
             </TwitterShareButton>
         </>
     );
