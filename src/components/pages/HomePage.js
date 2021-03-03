@@ -7,7 +7,7 @@ class HomePage extends React.Component {
     }
 
     componentDidMount = () => {
-        fetch('https://newsapi.org/v2/everything?q=Apple&from=2021-03-02&sortBy=popularity&apiKey=0eba9c03d7f74c069dc0036ce2395c91')
+        fetch('https://newsapi.org/v2/everything?q=(gender AND technology)&from=2021-03-02&sortBy=popularity&apiKey=0eba9c03d7f74c069dc0036ce2395c91')
         .then((response) => response.json())
         .then((jsonData) => {
             console.log(jsonData)
