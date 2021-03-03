@@ -58,7 +58,7 @@ class EditPost extends React.Component {
                         name="body"
                     />
                     <br />
-                    <button type="submit">Edit Thoughts</button>
+                    <button type="submit">Add Thoughts</button>
                 </form>
             </div>
         );

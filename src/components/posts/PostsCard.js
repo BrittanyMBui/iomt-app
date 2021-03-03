@@ -3,20 +3,19 @@ import { Link } from 'react-router-dom';
 
 const PostsCard = (props) => {
     return (
-        <div>
-            <ul>
-                <li>
-                    {props.post.title}
-                    <br />
-                    {props.post.body}
-                </li>
-                <Link to={`/editpost/${props.post._id}`} >
-                    <button>Edit Post</button>
-                </Link>
-                <br />
-                <button>Delete Post</button>
-            </ul>
-        </div>
+        <>
+            <div>
+                <h3>{props.post.title}</h3>
+                <p>{props.post.body}</p>
+            </div>
+            <br />
+            <Link to={`/editpost/${props.post._id}`} >
+                <button>Edit Post</button>
+            </Link>
+            <br />
+            <button onClick={() => props.deletePost(props.post._id)}>Delete Post</button>
+            <hr />
+        </>
     )
 }
 
