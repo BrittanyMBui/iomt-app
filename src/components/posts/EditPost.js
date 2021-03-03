@@ -1,10 +1,20 @@
 import React from 'react';
 
-class CreatePost extends React.Component {
+class EditPost extends React.Component {
     state = {
-        title: new Date(),
+        title: '',
         body: '',
     }
+
+    componentDidMount() {
+        fetch(`http://localhost:4000/iomtapi/v1/posts/${this.props.match.params.id}`)
+        .then((response) => response.json())
+        .then((jsonData) => {
+            console.log(jsonData)
+            this.setState(jsonData)
+        })
+        .catch((err) => console.log(err))
+    };
 
     handleChange = (event) => {
         this.setState({
@@ -14,28 +24,21 @@ class CreatePost extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state);
-        fetch('http://localhost:4000/iomtapi/v1/posts', {
-            method: 'POST',
+        fetch(`http://localhost:4000/iomtapi/v1/posts/${this.props.match.params.id}`, {
+            method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application.json',
             },
             body: JSON.stringify(this.state)
         })
-        .then((response) => {
-            return response.json();
-        })
-        .then((jsonData) => {
-            console.log(jsonData);
-            this.props.history.push('/posts')
-        })
+        .then(() => this.props.history.push('/posts'))
         .catch((err) => console.log(err))
     };
 
-    render() {
-
+    render () {
         return (
             <div>
+                <h1>Edit {this.state.title}</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title:</label>
                     <input
@@ -55,12 +58,11 @@ class CreatePost extends React.Component {
                         name="body"
                     />
                     <br />
-                    <button type="submit">Add Thoughts</button>
+                    <button type="submit">Edit Thoughts</button>
                 </form>
             </div>
-
         );
     }
 }
 
-export default CreatePost;
+export default EditPost;

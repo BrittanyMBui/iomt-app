@@ -6,6 +6,7 @@ import HomePage from '../components/pages/HomePage';
 import AboutPage from '../components/pages/AboutPage';
 import CreatePost from '../components/posts/CreatePost';
 import PostsIndex from '../components/posts/PostsIndex';
+import EditPost from '../components/posts/EditPost';
 
 const routes = (
     <Switch>
@@ -16,6 +17,7 @@ const routes = (
         <Route path='/about' component={AboutPage} />
         <Route path='/newpost' component={CreatePost} />
         <Route path='/posts' component={PostsIndex} />
+        <Route path='/editpost/:id' component={EditPost} />
     </Switch>
 )
 

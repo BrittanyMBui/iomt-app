@@ -5,9 +5,11 @@ const NavBar = () => {
         <nav>
             <ul>
                 <li>
+                    <Link to='/home'>IoMT</Link>{' '}
                     <Link to='/users/signup'>Sign Up</Link>{' '}
                     <Link to='/users/login'>Log In</Link>{' '}
-                    <Link to='/about'>About</Link>
+                    <Link to='/about'>About</Link>{' '}
+                    <Link to='/posts'>My Posts</Link>
                 </li>
             </ul>
         </nav>
