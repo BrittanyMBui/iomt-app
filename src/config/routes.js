@@ -5,6 +5,7 @@ import Login from '../components/auth/Login';
 import HomePage from '../components/pages/HomePage';
 import AboutPage from '../components/pages/AboutPage';
 import CreatePost from '../components/posts/CreatePost';
+import PostsIndex from '../components/posts/PostsIndex';
 
 const routes = (
     <Switch>
@@ -13,7 +14,8 @@ const routes = (
         <Route path='/users/login' component={Login} />
         <Route path='/home' component={HomePage} />
         <Route path='/about' component={AboutPage} />
-        <Route path='/post' component={CreatePost} />
+        <Route path='/newpost' component={CreatePost} />
+        <Route path='/posts' component={PostsIndex} />
     </Switch>
 )
 

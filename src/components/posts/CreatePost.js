@@ -4,7 +4,6 @@ class CreatePost extends React.Component {
     state = {
         title: new Date(),
         body: '',
-        user: '',
     }
 
     handleChange = (event) => {
@@ -16,7 +15,7 @@ class CreatePost extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
-        fetch('http://localhost:4000/posts', {
+        fetch('http://localhost:4000/iomtapi/v1/posts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

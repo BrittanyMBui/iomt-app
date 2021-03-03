@@ -18,7 +18,7 @@ class SignUp extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
-        fetch('http://localhost:4000/users/signup', {
+        fetch('http://localhost:4000/iomtapi/v1/users/signup', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
