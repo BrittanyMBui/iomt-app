@@ -1,3 +1,7 @@
+body {
+    font-family: 'Questrial', serif;
+}
+
 img {
     max-width: 500px;
     max-height: 400px;
@@ -9,4 +13,11 @@ img {
 
 ul {
     list-style: none;
+}
+
+.landing-page {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./images/landing.jpg');
+    background-size: cover;
 }
