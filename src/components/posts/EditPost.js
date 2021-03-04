@@ -18,22 +18,22 @@ class EditPost extends React.Component {
 
     handleChange = (event) => {
         this.setState({
-            [event.target.id]: event.target.value
-        })
-    };
+          [event.target.id]: event.target.value
+        });
+      };
 
     handleSubmit = (event) => {
         event.preventDefault();
         fetch(`http://localhost:4000/iomtapi/v1/posts/${this.props.match.params.id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application.json',
-            },
-            body: JSON.stringify(this.state)
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(this.state),
         })
-        .then(() => this.props.history.push('/posts'))
-        .catch((err) => console.log(err))
-    };
+          .then(() => this.props.history.push('/posts'))
+          .catch((err) => console.log(err));
+      };
 
     render () {
         return (
@@ -42,20 +42,20 @@ class EditPost extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title:</label>
                     <input
-                        onChange={this.handleChange}
-                        value={this.state.title}
                         type="text"
                         id="title"
                         name="title"
+                        value={this.state.title}
+                        onChange={this.handleChange}
                     />
                     <br />
                     <label htmlFor="body">Thoughts go here:</label>
                     <textarea
-                        onChange={this.handleChange}
-                        value={this.state.body}
                         type="text"
                         id="body"
                         name="body"
+                        value={this.state.body}
+                        onChange={this.handleChange}
                     />
                     <br />
                     <button type="submit">Add Thoughts</button>
