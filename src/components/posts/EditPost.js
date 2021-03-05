@@ -1,4 +1,5 @@
 import React from 'react';
+import { Editor } from '@tinymce/tinymce-react';
 
 class EditPost extends React.Component {
     state = {
@@ -7,7 +8,8 @@ class EditPost extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:4000/iomtapi/v1/posts/${this.props.match.params.id}`)
+        fetch(`https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts/${this.props.match.params.id}`, {
+        })
         .then((response) => response.json())
         .then((jsonData) => {
             console.log(jsonData)
@@ -21,10 +23,17 @@ class EditPost extends React.Component {
           [event.target.id]: event.target.value
         });
       };
+    
+    handleEditorChange = (body, editor) => {
+        this.setState({
+            body
+        })
+    }
+
 
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:4000/iomtapi/v1/posts/${this.props.match.params.id}`, {
+        fetch(`https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts/${this.props.match.params.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -49,13 +58,28 @@ class EditPost extends React.Component {
                         onChange={this.handleChange}
                     />
                     <br />
+                    <br />
                     <label htmlFor="body">Thoughts go here:</label>
-                    <textarea
+                    <Editor
+                        onEditorChange={this.handleEditorChange}
+                        value={this.state.body}
+                        outputFormat="text"
                         type="text"
                         id="body"
                         name="body"
-                        value={this.state.body}
-                        onChange={this.handleChange}
+                        init={{
+                            height: 200,
+                            menubar: false,
+                            plugins: [
+                                'advlist autolink lists link image charmap print preview anchor',
+                                'searchreplace visualblocks code fullscreen',
+                                'insertdatetime media table paste code help wordcount'
+                            ],
+                            toolbar:
+                                'undo redo | formatselect | bold italic backcolor | \
+                                alignleft aligncenter alignright alignjustify | \
+                                bullist numlist outdent indent | removeformat | help'
+                        }}
                     />
                     <br />
                     <button type="submit">Add Thoughts</button>

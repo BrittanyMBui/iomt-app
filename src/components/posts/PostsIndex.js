@@ -8,7 +8,7 @@ class PostsIndex extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:4000/iomtapi/v1/posts')
+        fetch('https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts')
         .then((response) => response.json())
         .then((jsonData) => {
             console.log(jsonData)
@@ -22,8 +22,8 @@ class PostsIndex extends React.Component {
     handleDeletePost = (postId) => {
         let confirmed = window.confirm('Delete post?');
         if (confirmed) {
-            fetch(`http://localhost:4000/iomtapi/v1/posts/${postId}`, {
-                method: 'DELETE',
+            fetch(`https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts/${postId}`, {
+                method: 'DELETE'
             })
             .then((response) => response.json())
             .then((jsonData) =>{
