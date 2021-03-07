@@ -13,15 +13,15 @@ const Routes = ({ token, setToken }) => (
         <Route exact path='/' component={LandingPage} />
         <Route path='/users/signup' component={SignUp} />
         <Route path='/about' component={AboutPage} />
-        <Route path='/newpost' component={CreatePost} />
-        <Route path='/posts' component={PostsIndex} />
-        <Route path='/editpost/:id' component={EditPost} />
         <Route 
             path='/users/login' 
             component={() =>
                 <Login setToken={setToken} />
             } />
         {token ? <Route path='/home' component={HomePage} /> : <Redirect to='/users/login' />}
+        {token ? <Route path='/newpost' component={CreatePost} /> : <Redirect to='/users/login' />}
+        {token ? <Route path='/posts' component={PostsIndex} /> : <Redirect to='/users/login' />}
+        {token ? <Route path='/editpost/:id' component={EditPost} /> : <Redirect to='/users/login' />}
     </Switch>
 )
 
