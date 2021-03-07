@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import LandingPage from '../components/pages/LandingPage';
 import SignUp from '../components/auth/SignUp';
 import Login from '../components/auth/Login';
@@ -8,17 +8,22 @@ import CreatePost from '../components/posts/CreatePost';
 import PostsIndex from '../components/posts/PostsIndex';
 import EditPost from '../components/posts/EditPost';
 
-const routes = (
+const Routes = ({ token, setToken }) => (
     <Switch>
         <Route exact path='/' component={LandingPage} />
         <Route path='/users/signup' component={SignUp} />
-        <Route path='/users/login' component={Login} />
-        <Route path='/home' component={HomePage} />
         <Route path='/about' component={AboutPage} />
         <Route path='/newpost' component={CreatePost} />
         <Route path='/posts' component={PostsIndex} />
         <Route path='/editpost/:id' component={EditPost} />
+        <Route 
+            path='/users/login' 
+            component={() =>
+                <Login setToken={setToken} />
+            } />
+        {token ? <Route path='/home' component={HomePage} /> : <Redirect to='/users/login' />}
     </Switch>
 )
 
-export default routes;
+
+export default Routes;

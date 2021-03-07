@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 const SignUp = () => {
@@ -26,6 +26,7 @@ const SignUp = () => {
             body: JSON.stringify(newUser)
         })
         .then((response) => {
+            console.log(response)
             if (response.status === 200) {
                 return response.json();
             }
@@ -44,6 +45,7 @@ const SignUp = () => {
     return (
         <div>
             <h1>Create an IoMT Account</h1>
+            {error ? <h2>{error}</h2> : null}
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username</label>
                 <input 

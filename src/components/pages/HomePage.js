@@ -1,5 +1,6 @@
 import React from 'react';
 import ArticleList from '../articles/ArticleList';
+import UserProfile from '../auth/UserProfile';
 
 class HomePage extends React.Component {
     state = {
@@ -21,7 +22,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div>
-                <h1>Welcome Back, usernamegoeshere</h1>
+                <UserProfile />
                 <ArticleList articles={this.state.articles} />
             </div>
         );
