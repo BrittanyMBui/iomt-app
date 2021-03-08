@@ -5,15 +5,15 @@
 body {
     font-family: 'Questrial', serif;
     margin: 0 auto;
-    background-color: #cdfffc;
-    color: var(--text)
 }
 
 .init-navbar {
-    background-color: #9fd8df;
+    background-color: rosybrown;
+    padding: 4px;
 }
 
 .landing-page {
+    color: white;
     height: 100vh;
     width: 100vw;
     background-image: url('./images/landing.jpg'), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
@@ -34,6 +34,9 @@ nav {
 }
 
 #logo {
+    background-color: #75cfb8;
+    border-radius: 40px;
+    border: 2px solid black;
     height: 40px;
     width: 40px;
 }

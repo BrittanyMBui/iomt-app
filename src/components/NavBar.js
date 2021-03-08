@@ -14,7 +14,7 @@ const NavBar = (props) => {
             <ul>
                 <li>
                     <Link to='/home'><img src={islandlogo} id="logo" alt="island logo" /></Link>{' '}
-                    <Link to='/home'>Feed</Link>{' '}
+                    <Link to='/home'>IoMT Feed</Link>{' '}
                     <Link to='/posts'>My Posts</Link>{' '}
                     <Link to='/about'>About</Link>{' '}
                     <span style={styles.logoutButton} onClick={props.handleLogout}>Logout</span>
