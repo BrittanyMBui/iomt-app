@@ -7,13 +7,12 @@ import './App.css';
 
 function App() {
   const history = useHistory();
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(localStorage.getItem('token'));
   
 
   const handleLogout = () => {
     setToken(null);
     localStorage.removeItem('token');
-    history.push('/login');
   }
 
   return (

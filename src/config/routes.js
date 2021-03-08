@@ -13,9 +13,7 @@ const Routes = ({ token, setToken }) => (
         <Route exact path='/' component={LandingPage} />
         <Route path='/users/signup' component={SignUp} />
         <Route path='/about' component={AboutPage} />
-        <Route 
-            path='/users/login' 
-            component={() =>
+        <Route path='/users/login' component={() =>
                 <Login setToken={setToken} />
             } />
         {token ? <Route path='/home' component={HomePage} /> : <Redirect to='/users/login' />}

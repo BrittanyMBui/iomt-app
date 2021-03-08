@@ -4,16 +4,14 @@ const UserProfile = () => {
     const [profile, setProfile] = useState({});
 
     useEffect(()=> {
-        const token = {
-            token: localStorage.getItem('token'),
-        }
+        const token = localStorage.getItem('token');
 
         fetch('https://safe-fortress-45916.herokuapp.com/iomtapi/v1/users/profile', {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/JSON',
-            },
-            body: JSON.stringify(token),
+                'Authorization': `Bearer ${token}`,
+            }
         })
         .then((response) => {
             if (response.status === 200) {
