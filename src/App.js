@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import NavBar from './components/NavBar';
+import InitNavBar from './components/InitNavBar';
 import Routes from './config/routes';
 
 import './App.css';
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <NavBar handleLogout={handleLogout}/>
+      {token ? <NavBar handleLogout={handleLogout} />: <InitNavBar />}
       <div>
         <Routes setToken={setToken} token={token} />
       </div>

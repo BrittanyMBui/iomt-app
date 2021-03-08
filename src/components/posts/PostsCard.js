@@ -6,15 +6,14 @@ const PostsCard = (props) => {
         <>
             <div>
                 <h3>{props.post.title}</h3>
-                <p>{props.post.body}</p>
+                <p dangerouslySetInnerHTML={{ __html: props.post.body}} />
             </div>
             <br />
             <Link to={`/editpost/${props.post._id}`} >
-                <button>Edit Post</button>
+                <i class="fas fa-edit"></i>
             </Link>
-            <br />
-            <button onClick={() => props.deletePost(props.post._id)}>Delete Post</button>
-            <hr />
+            {' '}
+            <a onClick={() => props.deletePost(props.post._id)}><i class="fas fa-trash-alt"></i></a>
         </>
     )
 }

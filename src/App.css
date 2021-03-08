@@ -1,6 +1,24 @@
+:root {
+    --text: #ff5e78;
+}
+
 body {
     font-family: 'Questrial', serif;
     margin: 0 auto;
+    background-color: #cdfffc;
+    color: var(--text)
+}
+
+.init-navbar {
+    background-color: #9fd8df;
+}
+
+.landing-page {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./images/landing.jpg'), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
 }
 
 img {
@@ -8,17 +26,35 @@ img {
     max-height: 400px;
 }
 
+nav {
+    color: rebeccapurple;
+    font-size: 24px;
+    background-color: #f9f871;
+    padding: 4px;
+}
+
+#logo {
+    height: 40px;
+    width: 40px;
+}
+
 .fa-save{
-    font-size: 2.5rem;
+    font-size: 24px;
 }
 
 ul {
     list-style: none;
 }
 
-.landing-page {
-    height: 100vh;
-    width: 100vw;
-    background-image: url('./images/landing.jpg');
-    background-size: cover;
+
+.fas {
+    font-size: 30px;
+    background-color: #ffc75f;
+    border-radius: 40px;
+    color: var(--text);
+}
+
+.article-title {
+    font-size: 24px;
+    color: var(--text);
 }

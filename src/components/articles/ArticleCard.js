@@ -7,9 +7,9 @@ const ArticleCard = (props) => {
             <div>
                 <ul>
                     <li>
-                        <a href={props.article.url} target="_blank" rel="noreferrer">{props.article.title}</a>
+                        <a href={props.article.url} target="_blank" rel="noreferrer" className="article-title">{props.article.title}</a>
                         <br />
-                        <img src={props.article.urlToImage} alt={props.article.title}/>
+                        <img src={props.article.urlToImage} alt={props.article.title} className="article-img" alt="article image" />
                         <br />
                         <Share article={props.article}/>
                         <br />

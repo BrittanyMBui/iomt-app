@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import islandlogo from '../images/islandlogo.svg'
 
 const NavBar = (props) => {
     const styles = {
@@ -12,12 +13,11 @@ const NavBar = (props) => {
         <nav>
             <ul>
                 <li>
-                    <Link to='/home'>IoMT</Link>{' '}
-                    <Link to='/users/signup'>Sign Up</Link>{' '}
-                    <Link to='/users/login'>Log In</Link>{' '}
-                    <span style={styles.logoutButton} onClick={props.handleLogout}>Logout</span>
+                    <Link to='/home'><img src={islandlogo} id="logo" alt="island logo" /></Link>{' '}
+                    <Link to='/home'>Feed</Link>{' '}
+                    <Link to='/posts'>My Posts</Link>{' '}
                     <Link to='/about'>About</Link>{' '}
-                    <Link to='/posts'>My Posts</Link>
+                    <span style={styles.logoutButton} onClick={props.handleLogout}>Logout</span>
                 </li>
             </ul>
         </nav>

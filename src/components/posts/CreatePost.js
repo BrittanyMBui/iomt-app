@@ -59,8 +59,6 @@ class CreatePost extends React.Component {
                     <label htmlFor="body">Thoughts go here:</label>
                     <Editor
                         onEditorChange={this.handleEditorChange}
-                        value={this.state.body}
-                        outputFormat="text"
                         type="text"
                         id="body"
                         name="body"
@@ -78,6 +76,7 @@ class CreatePost extends React.Component {
                                 bullist numlist | removeformat | help'
                         }}
                     />
+
                     <br />
                     <button type="submit">Add Thoughts</button>
                 </form>

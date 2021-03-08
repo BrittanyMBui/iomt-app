@@ -60,7 +60,7 @@ class PostsIndex extends React.Component {
             <>
             <div>
                 <h1>All Posts</h1>
-                <Link to='/newpost'><i className="fas fa-pen-alt"></i></Link>
+                <Link to='/newpost'><i className="fas fa-plus"><i class="fas fa-pen-alt"></i></i></Link>
                 <PostsList 
                     posts={this.state.posts}
                     deletePost={this.handleDeletePost} 

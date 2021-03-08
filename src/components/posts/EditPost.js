@@ -71,7 +71,6 @@ class EditPost extends React.Component {
                     <Editor
                         onEditorChange={this.handleEditorChange}
                         value={this.state.body}
-                        outputFormat="text"
                         type="text"
                         id="body"
                         name="body"

@@ -27,7 +27,7 @@ const Login = ({ setToken }) => {
             if (response.status === 200) {
                 return response.json();
             }
-            return setError(response.error)
+            return setError(response.statusText)
         })
         .then((jsonData) => {
             setToken(jsonData.token);
@@ -40,7 +40,7 @@ const Login = ({ setToken }) => {
     return(
         <div>
             <h1>Log In</h1>
-            {error ? <h2>{error}</h2> : null}
+            
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -61,6 +61,7 @@ const Login = ({ setToken }) => {
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                     />
+                    {error ? <p>{error}</p> : null}
                 </div>
                 <button type="submit">Login</button>
             </form>
