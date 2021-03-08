@@ -1,14 +1,15 @@
 import { Link } from 'react-router-dom';
 import islandlogo from '../images/islandlogo.svg'
+import LoginModal from './auth/LoginModal';
 
-const InitNavBar = () => {
+const InitNavBar = ({ setToken }) => {
     return(
         <nav className="init-navbar">
             <ul>
                 <li>
                     <Link to='/'><img src={islandlogo} id="logo" alt="island logo" /></Link>{' '}
                     <Link to='/users/signup'>Sign Up</Link>{' '}
-                    <Link to='/users/login'>Log In</Link>{' '}
+                    <LoginModal setToken={setToken} />
                     <Link to='/about'>About</Link>{' '}
                 </li>
             </ul>

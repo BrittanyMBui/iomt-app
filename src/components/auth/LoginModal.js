@@ -4,23 +4,34 @@ import Login from './Login';
 
 Modal.setAppElement('#root');
 
-const LoginModal = () => {
+const LoginModal = ({ setToken }) => {
     const [isOpen, setIsOpen] = useState(false);
+
 
     function toggleModal() {
         setIsOpen(!isOpen);
     }
 
+    const styles = {
+        logoutButton: {
+          textDecoration: 'underline',
+          cursor: 'pointer',
+        }
+    };
+
+
     return (
-        <div className="modal">
-            <button onClick={toggleModal}>Log In</button>
+        <div>
+            <span style={styles.logoutButton} onClick={toggleModal}>Log In</span>
             <Modal 
                 isOpen={isOpen}
                 onRequestClose={toggleModal}
-                contentLabel="Log In"
+                className="mymodal"
+                overlayClassName="myoverlay"
             >
-                <Login />
-                <button onClick={toggleModal}>Close</button>
+                <div>
+                    <Login setToken={setToken} />
+                </div>
             </Modal>
         </div>
     )
