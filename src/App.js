@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import Routes from './config/routes';
 
 import './App.css';
+import { EditorPropTypes } from '@tinymce/tinymce-react/lib/cjs/main/ts/components/EditorPropTypes';
 
 function App() {
   const history = useHistory();
@@ -13,13 +14,14 @@ function App() {
   const handleLogout = () => {
     setToken(null);
     localStorage.removeItem('token');
+    history.push('/');
   }
 
   return (
     <div>
-      <NavBar />
+      <NavBar handleLogout={handleLogout}/>
       <div>
-        <Routes setToken={setToken} token={token} handleLogout={handleLogout} />
+        <Routes setToken={setToken} token={token} />
       </div>
     </div>
   );
