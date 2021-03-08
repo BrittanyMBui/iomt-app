@@ -29,8 +29,13 @@ class PostsIndex extends React.Component {
     handleDeletePost = (postId) => {
         let confirmed = window.confirm('Delete post?');
         if (confirmed) {
+            const token = localStorage.getItem('token');
             fetch(`https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts/${postId}`, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/JSON',
+                    'Authorization': `Bearer ${token}`
+                }
             })
             .then((response) => response.json())
             .then((jsonData) =>{

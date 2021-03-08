@@ -8,7 +8,13 @@ class EditPost extends React.Component {
     }
 
     componentDidMount() {
+        const token = localStorage.getItem('token');
         fetch(`https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts/${this.props.match.params.id}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON',
+                'Authorization': `Bearer ${token}`,
+            }
         })
         .then((response) => response.json())
         .then((jsonData) => {
@@ -32,11 +38,13 @@ class EditPost extends React.Component {
 
 
     handleSubmit = (event) => {
+        const token = localStorage.getItem('token');
         event.preventDefault();
         fetch(`https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts/${this.props.match.params.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
           },
           body: JSON.stringify(this.state),
         })
