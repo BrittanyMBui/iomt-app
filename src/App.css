@@ -1,9 +1,14 @@
 :root {
     --text: #ff5e78;
+    --modaltext: #350b40;
+    --minty: #75cfb8;
+}
+
+* {
+    font-family: 'Questrial', serif;
 }
 
 body {
-    font-family: 'Questrial', serif;
     margin: 0 auto;
 }
 
@@ -31,22 +36,49 @@ body {
     padding-left: 5px;
 }
 
+p {
+    font-size: 18px;
+}
+
+button {
+    font-size: 16px;
+    color: var(--modaltext);
+    background-color: #75cfb8;
+    border: 1px solid var(--modaltext);
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
+button:hover {
+    color: #75cfb8;
+    background-color: var(--modaltext);
+    cursor: pointer;
+}
+
 img {
     max-width: 500px;
     max-height: 400px;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: (var(--modaltext))
+}
+
 nav {
-    color: rebeccapurple;
+    color: var(--modaltext);
     font-size: 24px;
     background-color: #f9f871;
     padding: 4px;
 }
 
 #logo {
-    background-color: #75cfb8;
+    background-color: var(--minty);
     border-radius: 40px;
-    border: 2px solid black;
+    border: 2px solid var(--modaltext);
     height: 40px;
     width: 40px;
 }
@@ -72,20 +104,39 @@ ul {
     color: var(--text);
 }
 
+label, input {
+    display: inline-block;
+    font-size: 18px;
+}
+
+label {
+    width: 50%;
+}
+
+label+input {
+    width: 50%;
+    margin-bottom: 5px;
+}
+
 /* ///////
 ///MODAL/
 //////*/
 .mymodal {
+    text-align: center;
+    color: #350b40;
+    background-image: url('./images/modalbg.jpg');
+    background-size: cover;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 1px solid #ccc;
-    background: #fff;
     overflow: auto;
     border-radius: 4px;
     outline: none;
     padding: 20px;
+    height: 250px;
+    width: 500px;
   }
   
   .myoverlay {

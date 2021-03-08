@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Login from './Login';
+import SignUp from './SignUp';
 
 Modal.setAppElement('#root');
 
-const LoginModal = ({ setToken }) => {
+const SignUpModal = ({ setToken }) => {
     const [isOpen, setIsOpen] = useState(false);
 
 
@@ -30,11 +30,11 @@ const LoginModal = ({ setToken }) => {
                 overlayClassName="myoverlay"
             >
                 <div>
-                    <Login setToken={setToken} />
+                    <SignUp setToken={setToken} />
                 </div>
             </Modal>
         </div>
     )
 }
 
-export default LoginModal;
+export default SignUpModal;

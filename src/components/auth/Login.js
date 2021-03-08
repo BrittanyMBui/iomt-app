@@ -40,10 +40,9 @@ const Login = ({ setToken }) => {
     return(
         <div>
             <h1>Log In</h1>
-            
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Email:</label>
                     <input 
                         type="email" 
                         id="email" 
@@ -53,7 +52,7 @@ const Login = ({ setToken }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password:</label>
                     <input 
                         type="password"
                         id="password" 

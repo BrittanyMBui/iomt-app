@@ -4,7 +4,7 @@ import islandlogo from '../images/islandlogo.svg'
 const NavBar = (props) => {
     const styles = {
         logoutButton: {
-          textDecoration: 'underline',
+          textDecoration: 'none',
           cursor: 'pointer',
         }
     };
