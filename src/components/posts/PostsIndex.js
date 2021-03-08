@@ -8,7 +8,14 @@ class PostsIndex extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts')
+        const token = localStorage.getItem('token');
+        fetch('https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON',
+                'Authorization': `Bearer ${token}`,
+            }
+        })
         .then((response) => response.json())
         .then((jsonData) => {
             console.log(jsonData)

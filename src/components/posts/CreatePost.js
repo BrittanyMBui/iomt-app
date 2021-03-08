@@ -22,10 +22,12 @@ class CreatePost extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state);
+        const token = localStorage.getItem('token');
         fetch('https://safe-fortress-45916.herokuapp.com/iomtapi/v1/posts', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`,
             },
             body: JSON.stringify(this.state),
         })
