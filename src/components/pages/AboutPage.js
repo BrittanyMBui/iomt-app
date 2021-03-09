@@ -1,7 +1,7 @@
 const AboutPage = () => {
     return(
-        <div>
-            <h1>About the Island of Misfit Techies</h1>
+        <div className="about">
+            <h1 className="about-header">About the Island of Misfit Techies</h1>
         </div>
     );
 }

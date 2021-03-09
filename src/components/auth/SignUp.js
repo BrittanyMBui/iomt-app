@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-const SignUp = () => {
+const SignUp = ({ setToken }) => {
     const history = useHistory();
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState();
@@ -30,12 +30,13 @@ const SignUp = () => {
             if (response.status === 200) {
                 return response.json();
             }
-            setError(response.message)
+            return setError(response.statusText)
             
         })
         .then((jsonData) => {
-            console.log(jsonData);
-            history.push('/users/login')
+            setToken(jsonData.token)
+            localStorage.setItem('token', jsonData.token)
+            history.push('/home');
         })
         .catch((err) => console.log(err));
     };

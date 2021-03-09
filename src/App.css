@@ -13,8 +13,29 @@ body {
 }
 
 .init-navbar {
-    background-color: rosybrown;
+    background-color: rgb(86, 72, 105);
     padding: 4px;
+}
+
+.init-navbar-li {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.login-link:hover, .signup-link:hover {
+    color: var(--minty)
+}
+
+.about-link:visited {
+    color: white;
+}
+
+.about-link:hover {
+    color: var(--minty);
+}
+.login-link, .signup-link {
+    cursor: pointer;
 }
 
 .landing-page {
@@ -65,7 +86,7 @@ a {
 }
 
 a:visited {
-    color: (var(--modaltext))
+    color: var(--modaltext);
 }
 
 nav {
@@ -115,7 +136,23 @@ label {
 
 label+input {
     width: 50%;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.about {
+    color: white;
+    background-image: url('./images/about.jpg'), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+}
+
+.about-header {
+    margin-top: 0;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
 /* ///////
@@ -137,6 +174,24 @@ label+input {
     padding: 20px;
     height: 250px;
     width: 500px;
+  }
+
+  .signupmodal {
+    text-align: center;
+    color: #350b40;
+    background-image: url('./images/modalbg.jpg');
+    background-size: cover;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    height: 400px;
+    width: 600px;
   }
   
   .myoverlay {

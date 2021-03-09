@@ -22,7 +22,7 @@ const LoginModal = ({ setToken }) => {
 
     return (
         <div>
-            <span style={styles.loginButton} onClick={toggleModal}>Log In</span>
+            <span className="login-link" onClick={toggleModal}>Log In</span>
             <Modal 
                 isOpen={isOpen}
                 onRequestClose={toggleModal}

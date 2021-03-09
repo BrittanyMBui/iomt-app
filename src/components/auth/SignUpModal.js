@@ -12,21 +12,14 @@ const SignUpModal = ({ setToken }) => {
         setIsOpen(!isOpen);
     }
 
-    const styles = {
-        loginButton: {
-          textDecoration: 'none',
-          cursor: 'pointer',
-        }
-    };
-
 
     return (
         <div>
-            <span style={styles.loginButton} onClick={toggleModal}>Log In</span>
+            <span className="signup-link" onClick={toggleModal}>Sign Up</span>
             <Modal 
                 isOpen={isOpen}
                 onRequestClose={toggleModal}
-                className="mymodal"
+                className="signupmodal"
                 overlayClassName="myoverlay"
             >
                 <div>
