@@ -10,9 +10,9 @@ const NavBar = (props) => {
     };
 
     return(
-        <nav>
+        <nav className="main-navbar">
             <ul>
-                <li>
+                <li className="main-navbar-li">
                     <Link to='/home'><img src={islandlogo} id="logo" alt="island logo" /></Link>{' '}
                     <Link to='/home'>IoMT Feed</Link>{' '}
                     <Link to='/posts'>My Posts</Link>{' '}

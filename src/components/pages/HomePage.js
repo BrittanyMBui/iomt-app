@@ -21,7 +21,7 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="home-page">
                 <UserProfile />
                 <ArticleList articles={this.state.articles} />
             </div>

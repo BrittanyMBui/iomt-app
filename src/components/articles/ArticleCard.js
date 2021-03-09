@@ -13,9 +13,6 @@ const ArticleCard = (props) => {
                         <br />
                         <Share article={props.article}/>
                         <br />
-                        <div>
-                        <i className="fas fa-save"></i>
-                        </div>
                     </li>
                 </ul>
             </div>
