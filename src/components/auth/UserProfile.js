@@ -27,7 +27,7 @@ const UserProfile = () => {
 
     return(
         <div>
-            <h1>Welcome back, {profile.username}</h1>
+            <h1 className="homepage-header">Welcome back, {profile.username}</h1>
         </div>
     );
 }

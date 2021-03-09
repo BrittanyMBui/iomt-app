@@ -8,7 +8,7 @@ import {
 } from 'react-share';
 
 const SharePost = (props) => {
-    const url = props.posts.url;
+    const url = props.posts;
     const size = "2.5rem";
     return (
         <>

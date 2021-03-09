@@ -2,6 +2,8 @@
     --text: #ff5e78;
     --modaltext: #350b40;
     --minty: #75cfb8;
+    --bg: #ffc75f;
+    --background: #fdf1d6;
 }
 
 * {
@@ -104,6 +106,14 @@ a:visited {
     justify-content: space-evenly;
 }
 
+.main-navbar-link:visited {
+    color: var(--modaltext)
+}
+
+.main-navbar-link:hover {
+    color: var(--minty);
+}
+
 #logo {
     background-color: var(--minty);
     border-radius: 40px;
@@ -116,6 +126,10 @@ a:visited {
     font-size: 24px;
 }
 
+.fa-trash-alt:hover {
+    cursor: pointer;
+}
+
 ul {
     list-style: none;
 }
@@ -123,9 +137,15 @@ ul {
 
 .fas {
     font-size: 30px;
-    background-color: #ffc75f;
-    border-radius: 40px;
+    background-color: var(--bg);
+    border-radius: 50px;
     color: var(--text);
+    padding: 7px;
+}
+
+.fas:hover{
+    background-color: var(--text);
+    color: var(--bg);
 }
 
 .article-title {
@@ -157,18 +177,27 @@ label+input {
     margin-top: 0;
 }
 
-.about-header {
+.about-header, .my-posts-header {
     margin-top: 0;
     padding-top: 5px;
     padding-left: 5px;
 }
 
 .home-page {
-    background-color: #fdf1d6;
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+.homepage-header {
+    color: var(--text)
+}
+
+.my-posts {
+    background-color: var(--background);
+}
+
 
 /* /////////
 ///MODAL///

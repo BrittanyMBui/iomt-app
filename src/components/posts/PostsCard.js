@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-
 const PostsCard = (props) => {
     return (
         <>

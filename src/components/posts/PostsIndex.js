@@ -58,8 +58,8 @@ class PostsIndex extends React.Component {
     render () {
         return(
             <>
-            <div>
-                <h1>All Posts</h1>
+            <div className="my-posts">
+                <h1 className="my-posts-header">All Posts</h1>
                 <Link to='/newpost'><i className="fas fa-plus"><i class="fas fa-pen-alt"></i></i></Link>
                 <PostsList 
                     posts={this.state.posts}
