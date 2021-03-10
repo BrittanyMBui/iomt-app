@@ -30,7 +30,7 @@ const SignUp = ({ setToken }) => {
             if (response.status === 200) {
                 return response.json();
             }
-            return setError('Something went wrong')
+            return setError('Something went wrong.. try again')
             
         })
         .then((jsonData) => {
@@ -44,11 +44,11 @@ const SignUp = ({ setToken }) => {
 
     
     return (
-        <div>
+        <div className="login-signup-page">
             <h1>Create an IoMT Account</h1>
-            {error ? <h2>{error}</h2> : null}
+            
             <form onSubmit={handleSubmit}>
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Username:</label>
                 <input 
                     onChange={(event) => setUsername(event.target.value)}
                     value={username}
@@ -57,7 +57,7 @@ const SignUp = ({ setToken }) => {
                     name="username"
                 />
                 <br />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email">Email:</label>
                 <input 
                     onChange={(event) => setEmail(event.target.value)}
                     value={email}
@@ -66,7 +66,7 @@ const SignUp = ({ setToken }) => {
                     name="email"
                 />
                 <br />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password:</label>
                 <input 
                     onChange={(event) => setPassword(event.target.value)}
                     value={password}
@@ -75,7 +75,7 @@ const SignUp = ({ setToken }) => {
                     name="password"
                 />
                 <br />
-                <label htmlFor="cnfPassword">Confirm Password</label>
+                <label htmlFor="cnfPassword">Confirm Password:</label>
                 <input 
                     onChange={(event) => setCnfPassword(event.target.value)}
                     value={cnfPassword}
@@ -83,6 +83,8 @@ const SignUp = ({ setToken }) => {
                     id="cnfPassword"
                     name="cnfPassword"
                 />
+                <br />
+                {error ? <h2>{error}</h2> : null}
                 <br />
                 <button type="submit">Create Account</button>
             </form>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 const Login = ({ setToken }) => {
     const history = useHistory();
@@ -27,18 +27,18 @@ const Login = ({ setToken }) => {
             if (response.status === 200) {
                 return response.json();
             }
-            return setError(response.statusText)
+            return setError('Invalid email or password')
         })
         .then((jsonData) => {
             setToken(jsonData.token);
             localStorage.setItem('token', jsonData.token);
             history.push('/home')
         })
-        .catch((err) => setError(err.message));
+        .catch((err) => console.log(err));
     }
 
     return(
-        <div>
+        <div className="login-signup-page">
             <h1>Log In</h1>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -60,6 +60,8 @@ const Login = ({ setToken }) => {
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                     />
+                    <br />
+                    <Link to='/users/signup' ><span className="noaccount">Don't have an account?</span></Link>
                     {error ? <p>{error}</p> : null}
                 </div>
                 <button type="submit">Login</button>

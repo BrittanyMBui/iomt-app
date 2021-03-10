@@ -99,6 +99,7 @@ button {
     border: 1px solid var(--modaltext);
     padding: 10px 30px;
     border-radius: 5px;
+    margin-top: 16px;
 }
 
 button:hover {
@@ -247,11 +248,15 @@ label+input {
     align-items: center;
 }
 
+.login-signup-page {
+    width: 400px;
+}
+
 /* /////////
 ///MODAL///
 ////////*/
 .mymodal {
-    text-align: center;
+    text-align: left;
     color: #350b40;
     background-image: url('./images/modalbg.jpg');
     background-size: cover;
@@ -264,12 +269,12 @@ label+input {
     border-radius: 4px;
     outline: none;
     padding: 20px;
-    height: 250px;
+    height: 290px;
     width: 500px;
   }
 
   .signupmodal {
-    text-align: center;
+    text-align: left;
     color: #350b40;
     background-image: url('./images/modalbg.jpg');
     background-size: cover;
@@ -282,7 +287,7 @@ label+input {
     border-radius: 4px;
     outline: none;
     padding: 20px;
-    height: 400px;
+    height: 440px;
     width: 600px;
   }
   

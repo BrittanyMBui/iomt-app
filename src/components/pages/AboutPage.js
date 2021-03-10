@@ -3,12 +3,13 @@ const AboutPage = () => {
         <div className="about">
             <h1 className="about-header">About the Island of Misfit Techies</h1>
             <p className="about-p">
-                The Island of Misfit Techies was built with womxn and underrepresented tech peoples in mind.
+                This is a place with interesting articles regarding underrepresented peoples in technology.
                 <br />
-                It's a place where one can come in and view a feed curated to gender related technology news and posts sorted
-                by popularity, 
+                Inclusion and diversity in this industry is so important.
                 <br />
-                and share said content via email, Twitter, or LinkedIn.
+                We need ideas and talent from any and all demographics and walks of life to keep moving society forward. 
+                <br />
+                One can share article content via email, Twitter, or LinkedIn.
                 <br />
                 One can also record any type of writing of their choosing in their own personal posts page.
             </p>
