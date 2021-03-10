@@ -6,13 +6,17 @@ const ArticleCard = (props) => {
         <>
             <div>
                 <ul>
-                    <li>
-                        <a href={props.article.url} target="_blank" rel="noreferrer" alt="article">{props.article.title}</a>
+                    <li className="article-item">
+
+                        <a href={props.article.url} target="_blank" rel="noreferrer">
+                            <img src={props.article.urlToImage} className="article-photo" />
+                        </a>
+                        <Share article={props.article} />
                         <br />
-                        <img src={props.article.urlToImage} />
                         <br />
-                        <Share article={props.article}/>
+                        <a href={props.article.url} target="_blank" rel="noreferrer" alt="article" className="article-title">{props.article.title}</a>
                         <br />
+
                     </li>
                 </ul>
             </div>

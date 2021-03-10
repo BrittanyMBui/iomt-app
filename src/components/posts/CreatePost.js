@@ -44,10 +44,11 @@ class CreatePost extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="posts-page">
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title:</label>
                     <input
+                        className="create-edit-input"
                         onChange={this.handleChange}
                         value={this.state.title}
                         type="text"

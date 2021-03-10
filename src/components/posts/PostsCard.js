@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const PostsCard = (props) => {
     return (
-        <>
+        <div className="posts-container">
             <div>
                 <h3>{props.post.title}</h3>
                 <p dangerouslySetInnerHTML={{ __html: props.post.body}} />
@@ -13,7 +13,7 @@ const PostsCard = (props) => {
             </Link>
             {' '}
             <a onClick={() => props.deletePost(props.post._id)}><i class="fas fa-trash-alt"></i></a>
-        </>
+        </div>
     )
 }
 

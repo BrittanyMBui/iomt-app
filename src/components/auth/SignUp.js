@@ -30,7 +30,7 @@ const SignUp = ({ setToken }) => {
             if (response.status === 200) {
                 return response.json();
             }
-            return setError(response.statusText)
+            return setError('Something went wrong')
             
         })
         .then((jsonData) => {

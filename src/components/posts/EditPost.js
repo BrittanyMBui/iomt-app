@@ -54,7 +54,7 @@ class EditPost extends React.Component {
 
     render () {
         return (
-            <div>
+            <div className="posts-page">
                 <h1>Edit {this.state.title}</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="title">Title:</label>
@@ -64,6 +64,7 @@ class EditPost extends React.Component {
                         name="title"
                         value={this.state.title}
                         onChange={this.handleChange}
+                        className="create-edit-input"
                     />
                     <br />
                     <br />

@@ -11,7 +11,7 @@ const Share = (props) => {
     const url = props.article.url;
     const size = "2.5rem";
     return (
-        <>
+        <div className="social-share">
             <EmailShareButton url={url}>
                 <EmailIcon size={size}/>
             </EmailShareButton>
@@ -21,7 +21,7 @@ const Share = (props) => {
             <TwitterShareButton url={url}>
                 <TwitterIcon size={size}/>
             </TwitterShareButton>
-        </>
+        </div>
     );
 }
 
