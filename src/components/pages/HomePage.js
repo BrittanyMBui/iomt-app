@@ -7,8 +7,11 @@ class HomePage extends React.Component {
         articles: []
     }
 
+    
+
     componentDidMount = () => {
-        fetch('https://newsapi.org/v2/everything?q=(underrepresented AND technology)&from=2021-03-08&sortBy=popularity&excludeDomains=vice.com&apiKey=0eba9c03d7f74c069dc0036ce2395c91')
+        const key = '0eba9c03d7f74c069dc0036ce2395c91';
+        fetch(`https://newsapi.org/v2/everything?q=(underrepresented AND technology)&from=2021-03-10&sortBy=popularity&excludeDomains=vice.com&apiKey=${key}`)
         .then((response) => response.json())
         .then((jsonData) => {
             console.log(jsonData)
