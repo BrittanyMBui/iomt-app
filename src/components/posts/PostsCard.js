@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const PostsCard = (props) => {
     return (
         <div className="posts-container">
-            <div>
+            <div className="posts-p">
                 <h3>{props.post.title}</h3>
                 <p dangerouslySetInnerHTML={{ __html: props.post.body}} />
             </div>

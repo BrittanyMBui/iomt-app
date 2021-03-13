@@ -78,12 +78,14 @@ body {
 
 .lp-header {
     margin-top: 0;
+    margin-left: 6px;
     padding-top: 5px;
     padding-left: 5px;
 }
 
 .lp-p {
     padding-left: 5px;
+    margin-left: 6px;
 }
 
 /* END LANDING PAGE */
@@ -205,7 +207,12 @@ label+input {
     margin-top: 0;
 }
 
+.about-p {
+    margin-left: 10px;
+}
+
 .about-header, .my-posts-header {
+    margin-left: 6px;
     margin-top: 0;
     padding-top: 5px;
     padding-left: 5px;
@@ -233,6 +240,10 @@ label+input {
     border: 0.5px solid black;
 }
 
+.posts-p {
+    margin-left: 6px;
+}
+
 /* CREATE/EDIT */
 .posts-page {
     background-image: url('./images/keys.jpg'), linear-gradient(rgba(190, 172, 172, 0.5),rgba(148, 141, 141, 0.5));
@@ -250,6 +261,7 @@ label+input {
 
 .login-signup-page {
     width: 400px;
+    margin-left: 10px;
 }
 
 /* /////////
