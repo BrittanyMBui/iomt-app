@@ -14,7 +14,6 @@ class HomePage extends React.Component {
         fetch(`https://newsapi.org/v2/everything?q=(underrepresented AND technology)&from=2021-03-10&sortBy=popularity&excludeDomains=vice.com&apiKey=${key}`)
         .then((response) => response.json())
         .then((jsonData) => {
-            console.log(jsonData)
             this.setState({
                 articles: jsonData.articles,
             })

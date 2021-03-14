@@ -36,6 +36,10 @@ body {
     color: white;
 }
 
+.about-link {
+    color: white;
+}
+
 .about-link:hover {
     color: var(--minty);
 }
