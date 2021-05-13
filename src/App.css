@@ -178,6 +178,7 @@ ul {
 
 .article-item {
     padding: 12px;
+    max-width: 500px;
 }
 
 .social-share {
